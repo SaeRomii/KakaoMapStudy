@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MapTest003.html</title>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bd09ce639b4d15a75a15c9b493530d9a"></script>
+
+<script type="text/javascript">
+
+	function initialize()
+	{
+		var container = document.getElementById('map'); //-- 지도를 표시할 div
+		var options = 
+		{ 	//지도를 생성할 때 필요한 기본 옵션
+			
+			// 지도의 중심 좌표
+			/* center: new daum.maps.LatLng(123456, 123456) */		    //-- 구 버전
+			/* center: new daum.maps.LatLng(37.556583, 126.919521) */	//-- 구 버전
+			center: new kakao.maps.LatLng(37.556583, 126.919521) 		//-- 최신버전
+			//지도의 레벨(cf. GoogleMap 이나 NaverMap 은 zoom 으로 구성)
+			, level: 3 
+		};
+		
+		// 지도를 표시할 div와 구성한 지도 옵션으로 지도 생성
+		/* var map = new daum.maps.Map(container, options); */ 	//-- 구 버전
+		var map = new kakao.maps.Map(container, options); 	
+	}
+
+</script>
+
+
+</head>
+<body onload="initialize()">
+
+<!-- ○ 발급받은 App key -->
+<!-- bd09ce639b4d15a75a15c9b493530d9a -->
+<!-- ○ 지도의 중심 좌표 -->
+<!-- 37.556583, 126.919521 -->
+
+<div>
+	<h1>Kakao Map 생성 기본 관찰</h1>
+	<p>지도 생성 기본 내용 관찰3</p>
+	<hr>
+</div>
+
+<!-- 지도를 그릴 div 공간 확보(지정) -->
+<div id="map" style="width: 100%; height: 350px;"></div>
+
+
+</body>
+</html>
